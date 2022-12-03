@@ -32,9 +32,20 @@ def elso_ketjegyu():
     print(f"Első kétjegyű szám indexe: {i}, értéke: {sorozat[i]}")
 
 def prime(szam):
-    i = 1
-    while i < szam**0.5 and szam % i != 0:
+    i = 2
+    while i < szam**(0.5):
+        if szam % i == 0:
+            return True
         i+=1
-    print(i)
 
+    return False
 
+def hany_prime():
+    i = 0
+    c = 0
+    while i < len(sorozat):
+        if prime(sorozat[i]):
+            c+=1
+        i+=1
+
+    print("ennyi prímszám van a sorozatban:", c)

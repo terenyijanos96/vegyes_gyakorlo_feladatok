@@ -2,7 +2,7 @@
 from gyakorlas import *
 
 
-"""separator("#")
+separator("#")
 
 random_szam_hozzado_az_elso_szamhoz()
 
@@ -10,6 +10,6 @@ utolso_szamjegy_helyett_ketjegyu_harommal_oszthato()
 
 separator()
 
-elso_ketjegyu()"""
+elso_ketjegyu()
 
-prime(22)
+hany_prime()
