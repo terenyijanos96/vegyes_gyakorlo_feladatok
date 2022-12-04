@@ -1,4 +1,5 @@
 import random
+import math
 
 sorozat = [-3, 5, 11, -2, 4]
 
@@ -16,6 +17,7 @@ def separator(sep=" "):
 def random_szam_hozzado_az_elso_szamhoz():
     rand = int(random.random() * 8) + 5
     sorozat[0] += rand
+    print(f"Első karakterhez hozzáadtunk {rand}-t. Így változott a sorozat: ", sorozat)
 
 def utolso_szamjegy_helyett_ketjegyu_harommal_oszthato():
     szam = int(input("Kérek egy kétjegyű, hárommal osztható számot! (pl: 33): "))
@@ -23,6 +25,7 @@ def utolso_szamjegy_helyett_ketjegyu_harommal_oszthato():
         szam = int(input("Nem jó! Egy kétjegyű, hárommal osztható számot kérek!: "))
 
     sorozat[len(sorozat)-1] = szam
+    print(f"Az utolsó elemet lecseréltük a megadott számra: ", sorozat)
 
 def elso_ketjegyu():
     i = 0
@@ -32,13 +35,16 @@ def elso_ketjegyu():
     print(f"Első kétjegyű szám indexe: {i}, értéke: {sorozat[i]}")
 
 def prime(szam):
-    i = 2
-    while i < szam**(0.5):
-        if szam % i == 0:
-            return True
-        i+=1
+    if szam < 2:
+        return False
 
-    return False
+    i = 2
+    while i < szam:
+        if szam % i == 0:
+            return False
+        i+=1
+    return True
+
 
 def hany_prime():
     i = 0
